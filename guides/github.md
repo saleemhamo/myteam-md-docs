@@ -2,7 +2,7 @@
 layout: guide
 title: "GitHub observations"
 description: "Offline observation logic and the remaining live integration work."
-nav_order: 7
+nav_order: 8
 source_references: true
 permalink: /guides/github.html
 ---

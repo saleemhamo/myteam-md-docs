@@ -34,6 +34,12 @@ code { font-size: .9em; }
 .button { display: inline-block; flex-shrink: 0; padding: .85rem 1.3rem; background: var(--blue); color: white; border: 1px solid var(--blue); font-size: 1rem; font-weight: 700; text-decoration: none; text-align: center; }
 .button:hover { background: var(--ink); border-color: var(--ink); }
 .stage-note { max-width: 48rem; margin-top: 2.2rem; color: var(--muted); font-size: .9rem; }
+.team-illustration { margin-top: 2.5rem; }
+.team-illustration img, .studio-section img { display: block; width: 100%; height: auto; }
+.team-illustration figcaption, .studio-section figcaption { margin-top: .9rem; color: var(--muted); font-size: .875rem; }
+.studio-section { padding-block: 4rem 5rem; border-top: 1px solid var(--rule); }
+.studio-intro { max-width: 43rem; margin-block: 1.7rem 2.5rem; color: var(--muted); }
+.studio-section figure img { border: 1px solid var(--rule); }
 .team-section { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; padding-block: 5rem; border-top: 1px solid var(--rule); align-items: center; }
 .section-story h2 { margin-bottom: 1.7rem; }
 .section-story p:not(.eyebrow) { color: var(--muted); }
@@ -107,7 +113,7 @@ pre { overflow-x: auto; font-size: 1rem; line-height: 1.65; }
   .hero .eyebrow { max-width: 18rem; }
   .desktop-break { display: none; }
   .team-section, .preview-grid, .question-list div, .roadmap-list, .docs-layout { grid-template-columns: 1fr; gap: 2rem; }
-  .team-section, .questions, .roadmap, .preview-section { padding-block: 3rem; }
+  .team-section, .questions, .roadmap, .preview-section, .studio-section { padding-block: 3rem; }
   .team-page { padding: 1.4rem; box-shadow: 7px 7px 0 #e2e3e8; margin-right: 7px; }
   .question-list div { gap: .65rem; }
   .site-footer { flex-direction: column; }

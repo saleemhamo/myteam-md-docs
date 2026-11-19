@@ -2,7 +2,7 @@
 layout: guide
 title: "Secrets and 1Password"
 description: "Connection planning; no live vault access yet."
-nav_order: 8
+nav_order: 9
 source_references: true
 permalink: /guides/secrets.html
 ---

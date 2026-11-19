@@ -11,6 +11,8 @@ permalink: /guides/ui-preview.html
 
 A browser walkthrough of the planned MyTeam screens using a **synthetic, in-memory** sample team. It is a design and interaction preview, not a working dashboard. The [terminal setup](setup.html) remains the only way to create a real workspace.
 
+The newer [illustrated Studio and Spotlight designs](visual-direction.html) explore a future direction. Those concept screens are not included in this runnable preview.
+
 ## Run it
 
 Requirements: Node.js **22 or newer**. No `npm install`, dependencies or network access are needed.

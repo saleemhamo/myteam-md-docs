@@ -2,7 +2,7 @@
 layout: guide
 title: "Setup plugins"
 description: "Export optional Claude Code and Codex setup guidance."
-nav_order: 6
+nav_order: 7
 source_references: true
 permalink: /guides/plugins.html
 ---

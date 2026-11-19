@@ -11,7 +11,7 @@ permalink: /guides/roadmap.html
 
 MyTeam.md starts with a private workspace and grows into a visible, accountable engineering team. Each phase has an outcome and an acceptance gate. Progress depends on demonstrated readiness, not a promised launch date.
 
-**Current phase: R0 — local setup with experimental previews.** The terminal wizard and setup-plugin exports work locally. A synthetic UI previews onboarding and team views; live workspace integration and automated workflows remain planned.
+**Current phase: R0 — local setup with experimental previews.** The terminal wizard and setup-plugin exports work locally. A synthetic UI previews onboarding and team views; live workspace integration and automated workflows remain planned. The primary intended onboarding experience starts inside the selected Claude or Codex project through MyTeam. See [plugin-led onboarding and autonomy](https://github.com/saleemhamo/myteam-md/blob/main/docs/plugin-onboarding-and-autonomy.md).
 
 **Prepared version:** `0.1.0-alpha.1`. No alpha release or npm package has been published.
 
@@ -23,7 +23,7 @@ MyTeam.md starts with a private workspace and grows into a visible, accountable 
 
 - Create a private workspace with a readable team definition and runtime preferences.
 - Validate it with `doctor`; package a tested archive and prepare a draft release.
-- Complete the owner's hands-on setup trial and resolve its findings.
+- Complete the owner's plugin-led setup trial from the native Projects section; verify actual invocation, compatible core setup, cancellation and repeat onboarding. Keep the terminal route tested as a support path.
 
 Screen mapping and visual prototypes can begin alongside this phase. [Acceptance gate](https://github.com/saleemhamo/myteam-md/blob/main/docs/readiness-and-rollout.md#r0-setup-alpha).
 
@@ -31,7 +31,7 @@ Screen mapping and visual prototypes can begin alongside this phase. [Acceptance
 
 **Planned.** See who owns the work and what the available evidence says.
 
-- Onboard selected sources and bind exact sessions to durable engineer identities.
+- Onboard from the selected native project, read its approved context, and bind exact sessions to durable engineer identities across supported hosts.
 - Deliver the team roster, Backlog.md board, activity views and relationship graphs.
 - Show skills, owned PRs/MRs, review obligations, recorded planning and a manual on-call roster.
 
@@ -41,11 +41,11 @@ The workspace must remain useful with one provider, several providers or manual 
 
 **Planned.** Move work through a checked engineering process.
 
-- Support planning, assignment, decisions and explicit handoffs.
+- Autonomously plan, assign, continue and hand off authorized tasks within the workspace's recorded action policy and budgets; escalate decisions and exceptions.
 - Require reproduction or evaluation, appropriate tests and independent review before delivery.
 - Explain missing evidence and blocked gates in the UI; dispatch bounded work within granted permissions.
 
-Compare existing orchestration tools before building an equivalent engine. [Acceptance gate](https://github.com/saleemhamo/myteam-md/blob/main/docs/readiness-and-rollout.md#r2-controlled-delivery-alpha).
+Reuse supported native project coordination and compare existing orchestration tools before building an equivalent engine. Prove one bounded autonomous delivery flow before broadening execution. [Acceptance gate](https://github.com/saleemhamo/myteam-md/blob/main/docs/readiness-and-rollout.md#r2-controlled-delivery-alpha).
 
 ## R3 Connected intake
 

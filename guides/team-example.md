@@ -3,13 +3,15 @@ layout: guide
 title: "A team on one page"
 description: "A synthetic example of the proposed team document."
 nav_order: 10
-source_references: false
+source_references: true
 permalink: /guides/team-example.html
 ---
 
 # Example engineering team
 
 This is a synthetic example of the proposed MyTeam.md team-definition format. It is not an executable configuration, and no runtime automatically loads it today.
+
+Use the [team handbook](https://github.com/saleemhamo/myteam-md/blob/main/docs/team-handbook.md) to choose responsibilities, skills, reporting and optional specialists. Keep real team context in the private workspace.
 
 ## Purpose
 

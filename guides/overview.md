@@ -15,7 +15,7 @@ One session plans. Another builds. A third reviews. You’re the one remembering
 
 MyTeam.md is a local-first engineering workspace in development, designed to keep roles, project context, and ownership clear across coding-agent sessions. **A new session shouldn’t mean a new team.**
 
-**[Roadmap](roadmap.html) · [UI preview](ui-preview.html) · [Setup guide](setup.html) · [Plugins](plugins.html)**
+**[Documentation](https://github.com/saleemhamo/myteam-md/blob/main/docs/README.md) · [Roadmap](roadmap.html) · [UI preview](ui-preview.html) · [Setup guide](setup.html) · [Plugins](plugins.html)**
 
 > **Current phase: R0 — local setup with experimental previews.** Create and check a private team workspace, export Claude/Codex setup-plugin folders, and explore a synthetic onboarding UI. Live boards, connected accounts, agent execution, and on-call automation remain planned. No alpha release or npm package has been published.
 
@@ -43,6 +43,8 @@ Provide this document explicitly when beginning work. It is a proposed conventio
 
 ## Explore the project
 
+- [Team handbook](https://github.com/saleemhamo/myteam-md/blob/main/docs/team-handbook.md) — team size, profiles, skills, research and operating agreements.
+- [Project-aware onboarding](https://github.com/saleemhamo/myteam-md/blob/main/docs/project-onboarding-contract.md) — the proposed discovery-first flow and questions for missing context.
 - [Product and onboarding](https://github.com/saleemhamo/myteam-md/blob/main/docs/product-and-onboarding.md) — intended experience and architecture.
 - [Runtime compatibility](https://github.com/saleemhamo/myteam-md/blob/main/docs/runtime-compatibility.md) — roles, sessions, and provider choices.
 - [GitHub integration](github.html) — tested observation logic; live transport is pending.
@@ -50,6 +52,7 @@ Provide this document explicitly when beginning work. It is a proposed conventio
 - [Readiness and rollout](https://github.com/saleemhamo/myteam-md/blob/main/docs/readiness-and-rollout.md) — acceptance gates behind the roadmap.
 - [Releases and publishing](https://github.com/saleemhamo/myteam-md/blob/main/docs/releases.md) — version tags, draft releases, and package channels.
 - [Prior art](https://github.com/saleemhamo/myteam-md/blob/main/docs/prior-art.md) — existing projects and lessons informing the design.
+- [Open decisions](https://github.com/saleemhamo/myteam-md/blob/main/docs/open-decisions.md) — remaining choices and evidence needed for release.
 - [Branding](https://github.com/myteam-md/branding) — Same Page identity and reusable assets.
 
 <details>
@@ -57,6 +60,6 @@ Provide this document explicitly when beginning work. It is a proposed conventio
 
 The repository is private. MyTeam.md is a working name; licensing and public release remain pending. Examples are synthetic. Keep credentials, company data, personal instruction libraries, and raw conversations outside the reusable product.
 
-[Credentials and access](https://github.com/saleemhamo/myteam-md/blob/main/docs/credentials-and-access.md) describes proposed security boundaries; runtime isolation is not a verified protection. For changes, follow [AGENTS.md](https://github.com/saleemhamo/myteam-md/blob/main/AGENTS.md) and the [repository checks](https://github.com/saleemhamo/myteam-md/blob/main/docs/ci.md). Maintainers should read the [Git account workflow](https://github.com/saleemhamo/myteam-md/blob/main/docs/git-accounts.md) before publishing.
+[Credentials and access](https://github.com/saleemhamo/myteam-md/blob/main/docs/credentials-and-access.md) describes proposed security boundaries; runtime isolation is not a verified protection. For changes, follow [Contributing](https://github.com/saleemhamo/myteam-md/blob/main/CONTRIBUTING.md), [AGENTS.md](https://github.com/saleemhamo/myteam-md/blob/main/AGENTS.md) and the [repository checks](https://github.com/saleemhamo/myteam-md/blob/main/docs/ci.md). Maintainers should read the [Git account workflow](https://github.com/saleemhamo/myteam-md/blob/main/docs/git-accounts.md) before publishing.
 
 </details>

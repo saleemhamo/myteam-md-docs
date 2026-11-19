@@ -2,6 +2,7 @@
 layout: guide
 title: "A team on one page"
 description: "A synthetic example of the proposed team document."
+nav_order: 4
 permalink: /guides/team-example.html
 ---
 

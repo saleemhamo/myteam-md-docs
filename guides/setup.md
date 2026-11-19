@@ -2,12 +2,13 @@
 layout: guide
 title: "Try the terminal setup"
 description: "Create and check a private demo workspace."
+nav_order: 1
 permalink: /guides/setup.html
 ---
 
 # Try the terminal setup
 
-This is a working **local setup preview**, version `0.1.0-alpha.1`. It creates a private workspace and a three-member starter team. It does not yet launch agents, read a board, observe sessions, install skills, or connect to GitHub/GitLab. No credentials or model calls are needed.
+This is a working **local setup preview**, version `0.1.0-alpha.1`. It creates a private workspace and a three-member starter team. The source checkout can also export optional native setup-plugin folders. It does not yet launch agents, read a board, observe sessions, install skills, or connect to GitHub/GitLab. No credentials or model calls are needed.
 
 The package is not published on npm. Use the source checkout or build the local npm archive below. The package is marked `private: true`; a public release and license are still pending.
 
@@ -115,9 +116,9 @@ Private workspaces remain where you created them. Review and remove unwanted dem
 
 ## Optional setup skill
 
-The archive and source include [myteam-setup](setup-skill.html), a small, original instruction file for agents assisting with this same CLI. No skill is required for the human wizard. It is bundled, not automatically installed or loaded into either provider. You can give an agent the file explicitly; runtime-specific skill installation is deferred.
+The archive and source include [myteam-setup](setup-skill.html), a small, original instruction file for agents assisting with this same CLI. No skill is required for the human wizard. It is bundled, not automatically installed or loaded into either provider. You can give an agent the file explicitly, or follow the [optional plugin-export checklist](setup-test.html#optional-plugin-export) to prepare a Claude/Codex folder for a separately authorized native trial. Export works from source and the locally built CLI archive. It does not install the plugin or verify native loading.
 
-The skill runs a preview, creates only the selected workspace, then checks it. It does not install provider tools, change agent settings, add credentials, or launch team members. A successful setup is not evidence that a skill was invoked in a later engineering session.
+The skill resolves a trusted CLI/version independently of the current directory. For a new workspace it runs a preview, creates only the selected workspace, then checks it; for an existing-workspace check it runs only `doctor`. Private workspaces belong outside replaceable plugin caches. It does not install provider tools, change agent settings, add credentials, or launch team members. A successful setup is not evidence that a skill was invoked in a later engineering session.
 
 ## Why this shape
 

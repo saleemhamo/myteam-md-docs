@@ -6,10 +6,10 @@ layout: default
     <p class="eyebrow">The preview</p>
     <nav aria-label="Documentation">
       <a href="{{ '/' | relative_url }}">Overview</a>
-      <a href="{{ '/guides/setup.html' | relative_url }}"{% if page.url == '/guides/setup.html' %} aria-current="page"{% endif %}>Set up your team</a>
-      <a href="{{ '/guides/setup-test.html' | relative_url }}"{% if page.url == '/guides/setup-test.html' %} aria-current="page"{% endif %}>Test the setup</a>
-      <a href="{{ '/guides/team-example.html' | relative_url }}"{% if page.url == '/guides/team-example.html' %} aria-current="page"{% endif %}>Team example</a>
-      <a href="{{ '/guides/setup-skill.html' | relative_url }}"{% if page.url == '/guides/setup-skill.html' %} aria-current="page"{% endif %}>Optional setup skill</a>
+      {% assign guides = site.pages | where: "layout", "guide" | sort: "nav_order" %}
+      {% for guide in guides %}
+      <a href="{{ guide.url | relative_url }}"{% if page.url == guide.url %} aria-current="page"{% endif %}>{{ guide.title | escape }}</a>
+      {% endfor %}
     </nav>
     <p class="docs-note">Local configuration today.<br>Board and live agent connections are still planned.</p>
   </aside>

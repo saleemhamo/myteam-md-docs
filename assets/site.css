@@ -79,6 +79,8 @@ pre { overflow-x: auto; font-size: 1rem; line-height: 1.65; }
 .docs-nav .eyebrow { margin-bottom: 1rem; }
 .docs-note { margin-top: 2rem; font-size: .875rem; color: var(--muted); }
 .prose { max-width: 52rem; min-width: 0; overflow-wrap: break-word; }
+.prose img { display: block; max-width: 100%; height: auto; }
+.source-note { color: var(--muted); font-size: .875rem; border-left: 2px solid var(--rule); padding-left: 1rem; }
 .prose h1 { font-size: clamp(2.5rem, 4vw, 3.6rem); margin-bottom: 1.6rem; }
 .prose h2 { font-size: 2rem; margin-block: 3rem 1.2rem; }
 .prose h3 { margin-block: 2rem 1rem; }

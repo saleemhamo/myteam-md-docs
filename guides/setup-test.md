@@ -3,6 +3,7 @@ layout: guide
 title: "Your first setup test"
 description: "Try the preview and check its boundaries."
 nav_order: 2
+source_references: false
 permalink: /guides/setup-test.html
 ---
 

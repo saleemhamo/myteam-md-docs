@@ -2,7 +2,8 @@
 layout: guide
 title: "Setup skill"
 description: "Optional guidance for an agent helping with the local CLI."
-nav_order: 3
+nav_order: 9
+source_references: false
 permalink: /guides/setup-skill.html
 ---
 

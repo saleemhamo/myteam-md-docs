@@ -3,6 +3,7 @@ layout: guide
 title: "Try the terminal setup"
 description: "Create and check a private demo workspace."
 nav_order: 1
+source_references: false
 permalink: /guides/setup.html
 ---
 

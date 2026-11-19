@@ -5,13 +5,16 @@ layout: default
   <aside class="docs-nav">
     <p class="eyebrow">The preview</p>
     <nav aria-label="Documentation">
-      <a href="{{ '/' | relative_url }}">Overview</a>
+      <a href="{{ '/' | relative_url }}">Home</a>
       {% assign guides = site.pages | where: "layout", "guide" | sort: "nav_order" %}
       {% for guide in guides %}
       <a href="{{ guide.url | relative_url }}"{% if page.url == guide.url %} aria-current="page"{% endif %}>{{ guide.title | escape }}</a>
       {% endfor %}
     </nav>
-    <p class="docs-note">Local configuration today.<br>Board and live agent connections are still planned.</p>
+    <p class="docs-note">Local setup and synthetic previews.<br>Live connections and agent execution are still planned.</p>
   </aside>
-  <article class="prose">{{ content }}</article>
+  <article class="prose">
+    {% if page.source_references %}<p class="source-note">Links to the source repository require access. Those files are not published on this site.</p>{% endif %}
+    {{ content }}
+  </article>
 </div>

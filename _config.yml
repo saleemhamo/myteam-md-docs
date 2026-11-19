@@ -1,0 +1,21 @@
+title: MyTeam.md
+description: Your team. On the same page. A local-first engineering team workspace in development.
+baseurl: /myteam-md-docs
+url: ""
+lang: en
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+permalink: pretty
+exclude:
+  - README.md
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: guides
+    values:
+      layout: guide

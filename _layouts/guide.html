@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="docs-layout wrap">
+  <aside class="docs-nav">
+    <p class="eyebrow">The preview</p>
+    <nav aria-label="Documentation">
+      <a href="{{ '/' | relative_url }}">Overview</a>
+      <a href="{{ '/guides/setup.html' | relative_url }}"{% if page.url == '/guides/setup.html' %} aria-current="page"{% endif %}>Set up your team</a>
+      <a href="{{ '/guides/setup-test.html' | relative_url }}"{% if page.url == '/guides/setup-test.html' %} aria-current="page"{% endif %}>Test the setup</a>
+      <a href="{{ '/guides/team-example.html' | relative_url }}"{% if page.url == '/guides/team-example.html' %} aria-current="page"{% endif %}>Team example</a>
+      <a href="{{ '/guides/setup-skill.html' | relative_url }}"{% if page.url == '/guides/setup-skill.html' %} aria-current="page"{% endif %}>Optional setup skill</a>
+    </nav>
+    <p class="docs-note">Local configuration today.<br>Board and live agent connections are still planned.</p>
+  </aside>
+  <article class="prose">{{ content }}</article>
+</div>

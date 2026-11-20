@@ -71,3 +71,11 @@ After the terminal checks, follow the [onboarding record trial](ui-preview.html#
 Use the [record-and-resume example](https://github.com/saleemhamo/myteam-md/blob/main/docs/host-integration.md#record-and-resume-a-chat) with a synthetic manual workspace. Read evidence, save a brief, record its coordinator and restart the CLI. Resume must return the same brief with `verification: user-supplied`. An unknown chat returns no brief; a different project is rejected. Retire the old reference and add a new one, then verify the old chat no longer resumes.
 
 Open the UI with the complete reference group. Confirm the recorded owner stays fixed while browsing another teammate, and that copying a prompt sends nothing. Retire the selected reference while the UI is open; refresh must show an unavailable/stale state, never sample success. Run the same route from an offline installed archive to verify the server and assets are included.
+
+## Plugin-led project trial
+
+With a matching trusted core and loaded native plugin, ask: “Onboard this project at /path/to/synthetic-project.” Let the FDE create private storage, inspect selected evidence, save the partial brief and surface unanswered business/authority questions. You should not need to edit JSON, choose a workspace ID or copy a transcript. Follow [folder-led entry](https://github.com/saleemhamo/myteam-md/blob/main/docs/host-integration.md#folder-led-first-run-and-fresh-chat-resume) for commands and custom-storage recovery.
+
+In a fresh chat, ask to resume the same project as coordinator, then as a saved teammate. Confirm the same workspace/revision, correct role and clearly labeled **Selected role** in the companion. It must not claim a verified native identity, assigned work or running team. Unknown member, wrong project and incompatible runtime should fail with recovery guidance. Sources and provider settings must remain unchanged. A custom `--store` or `--workspace` remains explicit; only the default location is rediscovered automatically.
+
+Record native model invocation separately from deterministic CLI tests. The current host-specific results and unresolved gates are in [plugin validation](https://github.com/saleemhamo/myteam-md/blob/main/docs/plugin-validation.md).

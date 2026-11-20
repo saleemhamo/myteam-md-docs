@@ -17,7 +17,7 @@ MyTeam.md is a local-first engineering workspace in development, designed to kee
 
 **[Documentation](https://github.com/saleemhamo/myteam-md/blob/main/docs/README.md) · [Roadmap](roadmap.html) · [UI preview](ui-preview.html) · [Setup guide](setup.html) · [Plugins](plugins.html)**
 
-> **Current phase: R0 — local setup with experimental previews.** Create and check a private team workspace, export Claude/Codex setup-plugin folders, read selected project evidence, and resume saved onboarding reports for recorded chats in a read-only local UI. Live boards, connected accounts, agent execution, and on-call automation remain planned. No alpha release or npm package has been published.
+> **Current phase: R0 — local setup with experimental previews.** Create and check a private team workspace, export Claude/Codex setup-plugin folders, read selected project evidence, and resume saved onboarding by project and role or recorded chat in a read-only local UI. Live boards, connected accounts, agent execution, and on-call automation remain planned. No alpha release or npm package has been published.
 
 ## Meet the team. Find your next step.
 
@@ -39,7 +39,7 @@ The wizard creates `MYTEAM.md`, a workspace profile, and three starter roles: **
 
 Follow the [setup guide](setup.html) for diagnostics and local package installation, or use the [test checklist](setup-test.html) to verify your first workspace.
 
-For a visual tour, run `node ui/server.mjs` from this checkout and open the printed local address. For your saved onboarding record, run `node bin/myteam.mjs ui --workspace /path/to/private-workspace`; the local CLI archive now includes this view. Follow [project discovery and chat resume](https://github.com/saleemhamo/myteam-md/blob/main/docs/host-integration.md) to select a recorded coordinator or engineer chat. The [UI guide](ui-preview.html) distinguishes local reports from the synthetic tour. Changes go through the main MyTeam.md chat and [onboarding CLI](https://github.com/saleemhamo/myteam-md/blob/main/docs/onboarding-state.md); the browser does not edit them. The [plugin guide](plugins.html) explains exporting optional setup guidance for Claude and Codex.
+For a visual tour, run `node ui/server.mjs` from this checkout and open the printed local address. For your saved onboarding record, run `node bin/myteam.mjs ui --workspace /path/to/private-workspace`; the local CLI archive now includes this view. Follow [project discovery and chat resume](https://github.com/saleemhamo/myteam-md/blob/main/docs/host-integration.md) for plugin-led setup and fresh-chat resume by project and role. The FDE handles private configuration and saves; users answer the remaining product questions. The [UI guide](ui-preview.html) distinguishes local reports from the synthetic tour. Changes go through the main MyTeam.md chat and [onboarding CLI](https://github.com/saleemhamo/myteam-md/blob/main/docs/onboarding-state.md); the browser does not edit them. The [plugin guide](plugins.html) explains exporting optional setup guidance for Claude and Codex.
 
 ## A team you can read
 

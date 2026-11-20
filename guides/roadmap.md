@@ -87,6 +87,8 @@ Stable release follows reviewed evidence and the maintainer's release decision. 
 
 UI work runs through the phases: prototype and shared components, then team visibility, workflow controls, connected intake and incident operations. The [UI plan](https://github.com/saleemhamo/myteam-md/blob/main/docs/ui-and-visuals.md) defines screens, states and visual acceptance. Existing local dashboard work remains an optional integration while its redistribution rights are unresolved.
 
+The [next experience increment](https://github.com/saleemhamo/myteam-md/blob/main/docs/ui-and-visuals.md#next-experience-increment) completes Figma and implementation journey by journey: existing-project onboarding and return, team/work inspection, then recovery. Validate each with an owner trial and browser evidence; adapter-dependent designs remain planned until their contracts work. The [documentation index](https://github.com/saleemhamo/myteam-md/blob/main/docs/README.md#one-authority-for-each-kind-of-information) defines the authority for plans, visual artifacts, tasks and published guidance.
+
 Roll out through synthetic teams, the owner's setup trial, one private team, shadow integrations and a limited active pilot. The [rollout plan](https://github.com/saleemhamo/myteam-md/blob/main/docs/readiness-and-rollout.md#pilot-and-rollout) defines evidence and recovery conditions. A public alpha may cover only the proven early phases; it does not imply automated on-call is ready.
 
 For exact tags, draft assets and publication boundaries, use the [release policy](https://github.com/saleemhamo/myteam-md/blob/main/docs/releases.md). Licensing and public distribution remain separate release decisions.

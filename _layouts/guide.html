@@ -11,6 +11,7 @@ layout: default
       <a href="{{ guide.url | relative_url }}"{% if page.url == guide.url %} aria-current="page"{% endif %}>{{ guide.title | escape }}</a>
       {% endfor %}
     </nav>
+    <div class="team-guide-link"><a href="{{ '/' | relative_url }}#team">Find your next step with the team</a><p>Responsibilities, practical checks, and a clear handoff.</p></div>
     <p class="docs-note">Local setup and synthetic previews.<br>Live connections and agent execution are still planned.</p>
   </aside>
   <article class="prose">

@@ -1,0 +1,125 @@
+- id: leo
+  name: Leo
+  role: Technical lead
+  intent: Find my starting point
+  short_intent: Find your footing
+  portrait: 1
+  remit: Scope, ownership, and the decisions that unblock everyone.
+  quote: A good team starts with a clear agreement.
+  brief: Before choosing tools, decide what you’re building, who owns each part, and what “done” means. Start here if you’re meeting MyTeam for the first time.
+  output: A one-page team agreement with a purpose, owners, and a definition of done.
+  steps:
+    - text: Separate what works today from the roadmap.
+      label: Product overview
+      path: /guides/overview.html
+      status: Available guide
+    - text: Write the project purpose and assign responsibilities.
+      label: Team example
+      path: /guides/team-example.html
+      status: Editable example
+    - text: Pick one next milestone, with evidence that would finish it.
+      label: Delivery roadmap
+      path: /guides/roadmap.html
+      status: Planned capabilities
+  handoff: iman
+  handoff_reason: Once the agreement is clear, Iman helps you turn it into a local workspace.
+- id: iman
+  name: Iman
+  role: Full stack engineer
+  intent: Set up my workspace
+  short_intent: Make it tangible
+  portrait: 4
+  remit: A working local setup, from first command to a useful view.
+  quote: Let’s get something you can actually use.
+  brief: Start with a small workspace you can inspect. Choose your runtime preference, check the generated files, then bring the setup into your main chat.
+  output: A private workspace with a team document and a checked setup.
+  steps:
+    - text: Create a demo workspace in a new private directory.
+      label: Run the setup
+      path: /guides/setup.html
+      status: Works locally
+    - text: Choose the setup guidance for your coding tool.
+      label: Export setup plugins
+      path: /guides/plugins.html
+      status: Export available
+    - text: Inspect saved onboarding in the local browser.
+      label: Open the workspace view
+      path: /guides/ui-preview.html
+      status: Read-only local view
+  handoff: maya
+  handoff_reason: With the workspace in place, Maya helps you understand the connection boundaries.
+- id: maya
+  name: Maya
+  role: Backend engineer
+  intent: Understand connections
+  short_intent: Know the boundaries
+  portrait: 0
+  remit: Connection contracts, access boundaries, and honest evidence.
+  quote: Know what’s connected. Know what isn’t.
+  brief: A configured tool is not a verified integration. Map the services you need and the evidence you expect before you rely on their output.
+  output: A connection plan that distinguishes working local behavior from pending integrations.
+  steps:
+    - text: Check which GitHub observations are tested offline.
+      label: GitHub support
+      path: /guides/github.html
+      status: Live transport planned
+    - text: Review how service connections and secrets are intended to work.
+      label: Secrets and access
+      path: /guides/secrets.html
+      status: Design and evaluation
+    - text: Separate plugin export from native installation and execution.
+      label: Plugin boundaries
+      path: /guides/plugins.html
+      status: Export available
+  handoff: nora
+  handoff_reason: Nora turns those boundaries into checks you can actually perform.
+- id: nora
+  name: Nora
+  role: QA & evaluation
+  intent: Check what I can trust
+  short_intent: Ask for the evidence
+  portrait: 2
+  remit: Acceptance criteria, failure paths, and verification you can repeat.
+  quote: “It worked” is the beginning of a check.
+  brief: Try the happy path, then the edge cases. Check the result against the promise, and keep unverified behavior visible instead of filling in the gaps.
+  output: "A short verification record: what you tried, what passed, and what remains unknown."
+  steps:
+    - text: Walk through setup and confirm the expected files and diagnostics.
+      label: First setup test
+      path: /guides/setup-test.html
+      status: Runnable checklist
+    - text: Check saved state and synthetic tour boundaries separately.
+      label: UI verification
+      path: /guides/ui-preview.html
+      status: Local preview
+    - text: Inspect the limits of offline GitHub evidence.
+      label: Observation contract
+      path: /guides/github.html
+      status: Offline tests
+  handoff: ada
+  handoff_reason: Bring your verification record to Ada to decide the next milestone.
+- id: ada
+  name: Ada
+  role: Delivery coordinator
+  intent: Decide what comes next
+  short_intent: Keep the work moving
+  portrait: 3
+  remit: Milestones, explicit handoffs, and a shared definition of ready.
+  quote: A handoff should carry the work forward.
+  brief: Bring the outcome, the evidence, and the open questions together. Decide the next small step with an owner, rather than treating a finished session as a finished task.
+  output: A next-step brief with an owner, acceptance evidence, and unresolved questions.
+  steps:
+    - text: Match your next step to the roadmap’s current phase.
+      label: Review the roadmap
+      path: /guides/roadmap.html
+      status: Planned delivery
+    - text: Recheck the product’s current capabilities before promising a release.
+      label: Current product scope
+      path: /guides/overview.html
+      status: Development preview
+    - text: Distinguish the interactive docs from future application designs.
+      label: Experience direction
+      path: /guides/visual-direction.html
+      status: Docs and concepts
+  handoff: leo
+  handoff_reason: Bring the next-step brief back to Leo to agree the scope and ownership.

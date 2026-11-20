@@ -7,7 +7,17 @@ source_references: false
 permalink: /guides/visual-direction.html
 ---
 
-# Your team, at a glance
+# A team you can work through
+
+## Try the interactive docs team
+
+[Open the team desk](https://saleemhamo.github.io/myteam-md-docs/#team). Choose a goal or a teammate, work through a linked checklist, and continue with the next person. Leo helps frame the work; Iman guides setup; Maya explains connection boundaries; Nora guides verification; Ada helps shape the next milestone.
+
+Hover previews a teammate’s prompt without changing your selected brief. Click, tap or Enter selects; arrow keys, Home and End move between teammates. Checkboxes record your own progress in this browser tab when session storage is available, with a reset for each brief. They never assert that MyTeam ran a check. Motion respects the system’s reduced-motion setting. With JavaScript unavailable, the same content remains as linked sections.
+
+The interactive components are implemented on the documentation homepage. They do not connect accounts, execute agents or observe a private workspace. The application and its saved-onboarding view have their own implementation.
+
+## Earlier application concepts
 
 **Design concept · synthetic team and work.** The illustrated direction extends MyTeam.md’s Same Page identity: warm paper, dark ink, blue accents and simple type. The existing logo and “Your team. On the same page.” remain the foundation.
 

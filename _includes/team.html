@@ -1,0 +1,52 @@
+<section class="handoff-desk wrap" id="team" aria-labelledby="desk-title">
+  <div class="desk-heading">
+    <div><p class="eyebrow">Meet the team</p><h2 id="desk-title">Good work is<br>a team effort.</h2></div>
+    <p>Come with a question.<br>Leave with a next step.<span class="desk-instruction">Explore a teammate, or start with what you need.</span></p>
+  </div>
+  <nav class="intent-list" aria-label="What do you need?">
+    {% for member in site.data.team %}<a href="#team-{{ member.id }}" data-intent="{{ member.id }}">{{ member.intent | escape }}</a>{% endfor %}
+  </nav>
+  <div class="people" aria-label="Meet your documentation team">
+    {% for member in site.data.team %}
+    <a class="person" id="person-{{ member.id }}" href="#team-{{ member.id }}" data-person="{{ member.id }}" aria-label="{{ member.name | escape }}, {{ member.role | escape }}" style="--portrait: {{ member.portrait }}">
+      <span class="person-art" aria-hidden="true"><span class="portrait"></span><span class="person-invitation">{{ member.short_intent | escape }}</span></span>
+      <span class="person-name">{{ member.name | escape }}<span class="person-mark" aria-hidden="true">+</span></span>
+      <span class="person-role">{{ member.role | escape }}</span>
+      <span class="person-remit">{{ member.remit | escape }}</span>
+    </a>
+    {% endfor %}
+  </div>
+  <div class="handoff-thread" aria-hidden="true"><span class="thread-rail"></span><span class="thread-route"></span></div>
+  <div class="team-briefs">
+    {% for member in site.data.team %}
+    {% assign next = site.data.team | where: "id", member.handoff | first %}
+    <section class="team-brief" id="team-{{ member.id }}" data-brief="{{ member.id }}" aria-labelledby="brief-{{ member.id }}">
+      <div class="brief-body">
+        <div class="brief-story">
+          <p class="brief-byline">{{ member.name | escape }} <span>/ {{ member.role | escape }}</span></p>
+          <h3 id="brief-{{ member.id }}">{{ member.quote | escape }}</h3>
+          <p class="brief-description">{{ member.brief | escape }}</p>
+          <div class="brief-output"><span class="brief-label">What you’ll take away</span><p>{{ member.output | escape }}</p></div>
+        </div>
+        <div class="brief-work">
+          <div class="checklist-heading"><h4>Your next moves</h4><span data-progress aria-live="polite">0 / 3 checked</span></div>
+          <ol class="team-checklist">
+            {% for step in member.steps %}
+            <li>
+              <input type="checkbox" id="check-{{ member.id }}-{{ forloop.index }}" data-check="{{ member.id }}-{{ forloop.index }}">
+              <div><label for="check-{{ member.id }}-{{ forloop.index }}">{{ step.text | escape }}</label><a href="{{ step.path | relative_url }}">{{ step.label | escape }}</a><span class="step-status">{{ step.status | escape }}</span></div>
+            </li>
+            {% endfor %}
+          </ol>
+          <p class="progress-note">Your checklist, not automated verification. <span data-save-note>Checks last while this page is open.</span> <button type="button" class="reset-checks" hidden>Reset checks</button></p>
+        </div>
+      </div>
+      <div class="brief-handoff">
+        <div><span class="brief-label">Next handoff</span><p>{{ member.handoff_reason | escape }}</p></div>
+        <a class="handoff-link" href="#team-{{ member.handoff }}" data-handoff="{{ member.handoff }}"><span>Continue with {{ next.name | escape }}</span><small>{{ next.role | escape }}</small></a>
+      </div>
+    </section>
+    {% endfor %}
+  </div>
+  <p class="desk-caption">Illustrated guides to the documentation. The checklists are yours; the characters don’t run agents or observe your workspace.</p>
+</section>

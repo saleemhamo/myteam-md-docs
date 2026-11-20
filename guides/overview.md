@@ -19,9 +19,11 @@ MyTeam.md is a local-first engineering workspace in development, designed to kee
 
 > **Current phase: R0 — local setup with experimental previews.** Create and check a private team workspace, export Claude/Codex setup-plugin folders, and resume saved onboarding reports in a read-only local UI. Live boards, connected accounts, agent execution, and on-call automation remain planned. No alpha release or npm package has been published.
 
-![Five fictional agent characters, illustrated in ink and blue on warm paper.](../assets/illustrated-team.jpg)
+## Meet the team. Find your next step.
 
-*Illustrated agents, shared responsibilities. [Explore the visual direction](visual-direction.html)—a design concept, with synthetic people and work.*
+**[Enter the interactive team desk](https://saleemhamo.github.io/myteam-md-docs/#team)** — meet Leo, Iman, Maya, Nora and Ada. Choose what you need, follow a practical checklist, and hand off to the next teammate. The docs provide working controls and links; the illustrated guides do not execute agents.
+
+GitHub renders this README as a document. The team’s hover, keyboard, touch and motion experience lives on the documentation site.
 
 ## Quickstart
 

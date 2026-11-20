@@ -1,0 +1,103 @@
+/* The handoff desk: five people, one useful next step. */
+.handoff-desk { padding-block: 1rem 4.5rem; --route-start: 10%; --route-width: 20%; }
+.desk-heading { display: flex; justify-content: space-between; align-items: end; gap: 3rem; margin-bottom: 2rem; }
+.desk-heading .eyebrow { margin-bottom: .9rem; }
+.desk-heading h2 { font-size: clamp(2.5rem, 5vw, 4.2rem); }
+.desk-heading > p { max-width: 23rem; font-size: 1.3rem; line-height: 1.4; }
+.desk-instruction { display: block; margin-top: .8rem; font-size: .9375rem; color: var(--muted); }
+.intent-list { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2rem; }
+.intent-list a { border: 1px solid var(--rule); border-radius: 2rem; padding: .65rem 1rem; color: var(--ink); font-size: .9375rem; text-decoration: none; transition: background-color 160ms, border-color 160ms, color 160ms; }
+.intent-list a:hover { border-color: var(--blue); }
+.intent-list a[aria-current] { background: var(--blue); border-color: var(--blue); color: white; font-weight: 400; }
+.people { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.4rem; }
+.person { display: flex; flex-direction: column; position: relative; min-width: 0; color: var(--ink); text-decoration: none; border-radius: 4px; }
+.person-art { display: block; flex-shrink: 0; position: relative; aspect-ratio: 3 / 5; overflow: hidden; border-radius: 48% 48% 3px 3px; background: #eeece2; isolation: isolate; }
+.portrait { position: absolute; inset: 0; background: url('illustrated-team.jpg') no-repeat; background-size: 500% 100%; background-position: calc(var(--portrait) * 25%) 50%; transition: transform 280ms cubic-bezier(.2,.7,.2,1), opacity 200ms; }
+.person-invitation { position: absolute; bottom: 0; left: 0; right: 0; z-index: 1; padding: 1.8rem .65rem .75rem; text-align: center; background: linear-gradient(transparent, #f7f6f2 55%); color: var(--blue); font-size: .875rem; font-weight: 700; opacity: 0; transform: translateY(6px); transition: transform 180ms, opacity 180ms; }
+.person-name { display: flex; align-items: center; justify-content: space-between; gap: .4rem; margin-top: .85rem; font-size: clamp(1.5rem, 2.6vw, 2.1rem); font-weight: 700; letter-spacing: -.04em; }
+.person-mark { font-size: 1.35rem; color: var(--blue); font-weight: 400; transition: transform 200ms; }
+.person-role { display: block; margin-top: .15rem; color: var(--muted); font-size: .875rem; }
+.person-remit { display: block; flex: 1; margin-top: .7rem; font-size: .875rem; line-height: 1.45; min-height: 4.2em; }
+.person::after { content: ''; display: block; height: 3px; margin-top: 1rem; background: var(--blue); transform: scaleX(0); transform-origin: left; transition: transform 180ms; }
+.person[aria-selected=true]::after, .person:focus-visible::after { transform: scaleX(1); }
+.person[aria-selected=true] .person-mark { transform: rotate(45deg); }
+.person[aria-selected=true] .person-art { box-shadow: inset 0 0 0 2px var(--blue); }
+.person:focus-visible .person-invitation { opacity: 1; transform: translateY(0); }
+@media (hover: hover) and (pointer: fine) {
+  .person:hover .portrait { transform: translateY(-4px) scale(1.025); }
+  .person:hover .person-invitation { opacity: 1; transform: translateY(0); }
+  .person:hover::after { transform: scaleX(1); }
+}
+.handoff-thread { height: 2.2rem; position: relative; display: none; }
+[data-enhanced] .handoff-thread { display: block; }
+.thread-rail, .thread-route { position: absolute; top: 50%; height: 2px; }
+.thread-rail { left: 10%; width: 80%; background: var(--rule); }
+.thread-route { left: var(--route-start); width: var(--route-width); background: var(--blue); transform-origin: left; }
+.thread-route::before, .thread-route::after { content: ''; position: absolute; top: -3px; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
+.thread-route::before { left: -4px; }
+.thread-route::after { right: -4px; }
+.team-brief { background: var(--ink); color: var(--paper); margin-top: 1.5rem; scroll-margin-top: 2rem; border-radius: 4px; overflow: hidden; }
+.team-brief[hidden] { display: none; }
+[data-enhanced] .team-brief { margin-top: 0; }
+.team-brief :focus-visible { outline-color: #a8b6ff; }
+.brief-body { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4rem; padding: 2.75rem; min-height: 30rem; }
+.brief-byline { color: var(--paper); font-weight: 700; font-size: 1rem; }
+.brief-byline span { color: #b6b6b2; font-weight: 400; }
+.brief-story h3 { font-size: clamp(2rem, 3.4vw, 3rem); letter-spacing: -.045em; line-height: 1.12; margin-block: 1.6rem 1.3rem; }
+.brief-description { color: #cdcdc7; font-size: 1rem; line-height: 1.65; }
+.brief-output { margin-top: 2rem; padding-left: 1rem; border-left: 2px solid #7790ff; }
+.brief-label { display: block; font-family: 'SFMono-Regular', Consolas, monospace; font-size: .8125rem; letter-spacing: .035em; text-transform: uppercase; color: #b6b6b2; }
+.brief-output p { margin-top: .65rem; font-size: .9375rem; }
+.checklist-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; padding-bottom: 1rem; }
+.checklist-heading h4 { font-size: 1.125rem; margin: 0; }
+[data-progress] { font-size: .8125rem; color: #b6b6b2; font-variant-numeric: tabular-nums; visibility: hidden; white-space: nowrap; }
+[data-enhanced] [data-progress] { visibility: visible; }
+.team-checklist { margin: 0; padding: 0; list-style: none; }
+.team-checklist li { display: grid; grid-template-columns: 1.3rem 1fr; gap: .9rem; border-top: 1px solid #464643; padding-block: 1rem; }
+.team-checklist input { accent-color: #8297ff; width: 1.2rem; height: 1.2rem; margin: .2rem 0 0; cursor: pointer; }
+.team-checklist label { display: block; font-size: 1rem; cursor: pointer; line-height: 1.45; }
+.team-checklist input:checked + div label { color: #b3b8a6; text-decoration: line-through; text-decoration-thickness: 1px; }
+.team-checklist a { display: inline-block; color: #a8b6ff; font-size: .875rem; margin-top: .5rem; padding-block: .15rem; }
+.step-status { display: block; color: #b6b6b2; font-size: .8125rem; margin-top: .25rem; }
+.progress-note { color: #b6b6b2; font-size: .8125rem; line-height: 1.6; margin-top: .8rem; }
+.reset-checks { color: #deded8; background: transparent; border: 0; padding: .35rem 0; font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: .2em; }
+.reset-checks:hover { color: white; }
+.brief-handoff { border-top: 1px solid #464643; padding: 1.6rem 2.75rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+.brief-handoff > div { max-width: 35rem; }
+.brief-handoff p { margin-top: .4rem; font-size: .9375rem; color: #cdcdc7; }
+.handoff-link { min-width: 12.5rem; flex-shrink: 0; border: 1px solid #72736e; padding: .75rem 1rem; color: var(--paper); text-decoration: none; transition: background-color 160ms, border-color 160ms; }
+.handoff-link:hover { background: #30312d; border-color: var(--paper); }
+.handoff-link span { display: block; font-size: 1rem; font-weight: 700; }
+.handoff-link small { font-size: .8125rem; color: #b6b6b2; }
+.desk-caption { margin-top: 1rem; color: var(--muted); font-size: .8125rem; max-width: 50rem; }
+@media (max-width: 900px) {
+  .people { gap: .75rem; }
+  .person-remit { min-height: 6em; }
+  .brief-body { gap: 2rem; padding: 2rem; }
+  .brief-handoff { padding: 1.5rem 2rem; }
+}
+@media (max-width: 600px) {
+  .handoff-desk { padding-block: 0 3rem; }
+  .desk-heading { display: block; }
+  .desk-heading > p { margin-top: 1.3rem; font-size: 1.125rem; }
+  .intent-list { gap: .5rem; margin-bottom: 1.5rem; }
+  .intent-list a { font-size: .875rem; padding: .55rem .8rem; }
+  .people { gap: .4rem; }
+  .person-art { aspect-ratio: 3 / 5; border-radius: 45% 45% 0 0; }
+  .person-name { font-size: 1.05rem; margin-top: .65rem; justify-content: center; letter-spacing: -.025em; }
+  .person-mark, .person-role, .person-remit, .person-invitation { display: none; }
+  .person::after { margin-top: .65rem; }
+  .handoff-thread { height: 1.7rem; }
+  .brief-body { grid-template-columns: 1fr; padding: 1.5rem; gap: 2rem; min-height: 0; }
+  .brief-story h3 { font-size: 2.25rem; margin-top: 1.1rem; }
+  .brief-description { font-size: 1rem; }
+  .brief-output { margin-top: 1.5rem; }
+  .brief-handoff { flex-direction: column; align-items: stretch; padding: 1.5rem; gap: 1.2rem; }
+  .team-checklist li { padding-block: 1.15rem; }
+  .team-checklist a { padding-block: .4rem; }
+  .team-brief { scroll-margin-top: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .handoff-desk *, .handoff-desk *::before, .handoff-desk *::after { transition: none !important; animation: none !important; }
+  .person:hover .portrait { transform: none; }
+}

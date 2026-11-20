@@ -8,6 +8,10 @@
   <meta name="theme-color" content="#F7F6F2">
   <link rel="icon" type="image/png" href="{{ '/assets/avatar.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+  {% if page.interactive_team %}
+  <link rel="stylesheet" href="{{ "/assets/team.css" | relative_url }}">
+  <script src="{{ "/assets/team.js" | relative_url }}" defer></script>
+  {% endif %}
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -17,6 +21,7 @@
       <span translate="no">MyTeam<span class="suffix">.md</span></span>
     </a>
     <nav aria-label="Main navigation">
+      <a href="{{ '/' | relative_url }}#team">Meet the team</a>
       <a href="{{ '/guides/setup.html' | relative_url }}"{% if page.url == '/guides/setup.html' %} aria-current="page"{% endif %}>Setup guide</a>
       <a href="{{ '/guides/ui-preview.html' | relative_url }}"{% if page.url == '/guides/ui-preview.html' %} aria-current="page"{% endif %}>UI preview</a>
     </nav>

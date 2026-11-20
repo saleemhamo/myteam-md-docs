@@ -3,7 +3,7 @@ layout: guide
 title: "Try the terminal setup"
 description: "Create and check a private demo workspace."
 nav_order: 1
-source_references: false
+source_references: true
 permalink: /guides/setup.html
 ---
 
@@ -12,6 +12,12 @@ permalink: /guides/setup.html
 This is a working **local setup preview**, version `0.1.0-alpha.1`. It creates a private workspace and a three-member starter team. The source checkout can also export optional native setup-plugin folders. It does not yet launch agents, read a board, observe sessions, install skills, or connect to GitHub/GitLab. No credentials or model calls are needed.
 
 The package is not published on npm. Use the source checkout or build the local npm archive below. The package is marked `private: true`; a public release and license are still pending.
+
+## Continue in the main chat and browser
+
+After `init` and `doctor`, ask the main MyTeam.md chat to inspect the selected project within your existing source/provider permissions, record what it understands and propose the team. `myteam onboard --workspace DIR` resumes its private record; revision-checked updates preserve facts, questions, reported checks and proposed profiles. See [saved onboarding](https://github.com/saleemhamo/myteam-md/blob/main/docs/onboarding-state.md) for the contract. This does not automatically scan sources or launch workers.
+
+From the source checkout, `node ui/server.mjs --workspace DIR` opens a read-only local view at the printed URL. You can inspect and copy a targeted prompt; direct changes stay in the chat. Without a workspace argument it is a synthetic tour. See [UI usage](ui-preview.html).
 
 ## Requirements
 

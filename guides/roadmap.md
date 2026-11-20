@@ -11,17 +11,19 @@ permalink: /guides/roadmap.html
 
 MyTeam.md starts with a private workspace and grows into a visible, accountable engineering team. Each phase has an outcome and an acceptance gate. Progress depends on demonstrated readiness, not a promised launch date.
 
-**Current phase: R0 — local setup with experimental previews.** The terminal wizard and setup-plugin exports work locally. A synthetic UI previews onboarding and team views; live workspace integration and automated workflows remain planned. The primary intended onboarding experience starts inside the selected Claude or Codex project through MyTeam. See [plugin-led onboarding and autonomy](https://github.com/saleemhamo/myteam-md/blob/main/docs/plugin-onboarding-and-autonomy.md).
+**Current phase: R0 — local setup with experimental previews.** The terminal wizard and setup-plugin exports work locally. Saved onboarding reports and a read-only local workspace view support continuity; synthetic views illustrate later work. Live board/session integration and automated workflows remain planned. The primary intended onboarding experience starts inside the selected Claude or Codex project through MyTeam. See [plugin-led onboarding and autonomy](https://github.com/saleemhamo/myteam-md/blob/main/docs/plugin-onboarding-and-autonomy.md).
 
 **Prepared version:** `0.1.0-alpha.1`. No alpha release or npm package has been published.
 
 [Try setup](setup.html) · [UI preview](ui-preview.html) · [Setup plugins](plugins.html) · [UI and visuals](https://github.com/saleemhamo/myteam-md/blob/main/docs/ui-and-visuals.md) · [Operating process and readiness](https://github.com/saleemhamo/myteam-md/blob/main/docs/readiness-and-rollout.md)
 
+The [team journeys and implementation slices](https://github.com/saleemhamo/myteam-md/blob/main/docs/team-journeys.md) connect setup, discovery, intake, sprint planning, execution, PM acceptance and learning to these phases. The main chat directs changes; the browser initially observes.
+
 ## R0 Setup alpha
 
 **In progress.** Make the first setup experience easy to install, understand and verify.
 
-- Introduce one [MyTask.md FDE onboarding guide](https://github.com/saleemhamo/myteam-md/blob/main/docs/project-onboarding-contract.md#fde-setup-to-team-handoff) to help establish the local environment and explain setup blockers; team construction and handoff continue in R1.
+- Continue the main MyTeam.md chat in its [FDE onboarding responsibility](https://github.com/saleemhamo/myteam-md/blob/main/docs/project-onboarding-contract.md#fde-setup-to-team-handoff) to help establish the local environment and explain setup blockers; team construction and handoff continue in R1.
 - Create a private workspace with a readable team definition and runtime preferences.
 - Validate it with `doctor`; package a tested archive and prepare a draft release.
 - Complete the owner's plugin-led setup trial from the native Projects section; verify actual invocation, compatible core setup, cancellation and repeat onboarding. Keep the terminal route tested as a support path.

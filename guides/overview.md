@@ -17,7 +17,7 @@ MyTeam.md is a local-first engineering workspace in development, designed to kee
 
 **[Documentation](https://github.com/saleemhamo/myteam-md/blob/main/docs/README.md) · [Roadmap](roadmap.html) · [UI preview](ui-preview.html) · [Setup guide](setup.html) · [Plugins](plugins.html)**
 
-> **Current phase: R0 — local setup with experimental previews.** Create and check a private team workspace, export Claude/Codex setup-plugin folders, and explore a synthetic onboarding UI. Live boards, connected accounts, agent execution, and on-call automation remain planned. No alpha release or npm package has been published.
+> **Current phase: R0 — local setup with experimental previews.** Create and check a private team workspace, export Claude/Codex setup-plugin folders, and resume saved onboarding reports in a read-only local UI. Live boards, connected accounts, agent execution, and on-call automation remain planned. No alpha release or npm package has been published.
 
 ![Five fictional agent characters, illustrated in ink and blue on warm paper.](../assets/illustrated-team.jpg)
 
@@ -37,7 +37,7 @@ The wizard creates `MYTEAM.md`, a workspace profile, and three starter roles: **
 
 Follow the [setup guide](setup.html) for diagnostics and local package installation, or use the [test checklist](setup-test.html) to verify your first workspace.
 
-For a visual tour, run `node ui/server.mjs` from this checkout and open the printed local address. The [UI preview](ui-preview.html) uses synthetic data; it does not connect accounts or create a real workspace. The [plugin guide](plugins.html) explains exporting optional setup guidance for Claude and Codex.
+For a visual tour, run `node ui/server.mjs` from this checkout and open the printed local address. For your saved onboarding record, add `--workspace /path/to/private-workspace`. The [UI guide](ui-preview.html) distinguishes local reports from the synthetic tour. Changes go through the main MyTeam.md chat and [onboarding CLI](https://github.com/saleemhamo/myteam-md/blob/main/docs/onboarding-state.md); the browser does not edit them. The [plugin guide](plugins.html) explains exporting optional setup guidance for Claude and Codex.
 
 ## A team you can read
 
@@ -47,6 +47,7 @@ Provide this document explicitly when beginning work. It is a proposed conventio
 
 ## Explore the project
 
+- [Team journeys](https://github.com/saleemhamo/myteam-md/blob/main/docs/team-journeys.md) — one main chat, setup through acceptance, and implementation slices.
 - [Team handbook](https://github.com/saleemhamo/myteam-md/blob/main/docs/team-handbook.md) — team size, profiles, skills, research and operating agreements.
 - [Project-aware onboarding](https://github.com/saleemhamo/myteam-md/blob/main/docs/project-onboarding-contract.md) — the proposed discovery-first flow and questions for missing context.
 - [Product and onboarding](https://github.com/saleemhamo/myteam-md/blob/main/docs/product-and-onboarding.md) — intended experience and architecture.

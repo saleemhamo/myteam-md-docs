@@ -1,88 +1,58 @@
 ---
 layout: guide
 title: "UI preview"
-description: "Explore the synthetic local interface."
+description: "Observe saved onboarding or explore a synthetic team."
 nav_order: 5
 source_references: true
 permalink: /guides/ui-preview.html
 ---
 
-# Local UI preview
+# Local UI
 
-A browser walkthrough of the planned MyTeam screens using a **synthetic, in-memory** sample team. It is a design and interaction preview, not a working dashboard. The [terminal setup](setup.html) remains the only way to create a real workspace.
+A read-only browser view alongside the main **MyTeam.md** chat. The chat handles onboarding as the FDE and remains the coordinating conversation. The browser shows saved reports and allows navigation, inspection, refresh and copying a targeted prompt. Product changes go through the chat; there is no browser write endpoint or embedded chat composer.
 
-The newer [illustrated Studio and Spotlight designs](visual-direction.html) explore a future direction. Those concept screens are not included in this runnable preview.
+## Run
 
-## Run it
-
-Requirements: Node.js **22 or newer**. No `npm install`, dependencies or network access are needed.
-
-From the repository root:
+From this source checkout, with Node.js 22 or newer:
 
 ```sh
-node ui/server.mjs
+node ui/server.mjs --workspace /path/to/private-workspace --port 4318
 ```
 
-Open <http://127.0.0.1:4317/>. Stop the server with **Ctrl+C**.
+Use a workspace created through [setup](setup.html). Open the printed `127.0.0.1` address. Without `--workspace`, the server shows a separate synthetic tour. The default port is 4317; choose another if it is already in use. `MYTEAM_UI_PORT` also sets the port. Ctrl+C stops the server.
 
-To use another loopback port, run `node ui/server.mjs --port 4400` or set `MYTEAM_UI_PORT=4400`. The server always binds to `127.0.0.1`; the host is not configurable.
+The npm CLI archive does not include the UI assets/server in this increment. No dependency installation, credentials or model calls are needed to observe the local view.
 
-## What the preview shows
+## What the view means
 
-- **Onboarding, three steps.** Name the demo workspace and team (blank names cannot continue); choose a manual, Codex, Claude or mixed runtime preference and inspect the lead, engineer and QA roles (mixed mode shows and lets you change each role's assignment, starting from the CLI defaults); review the synthetic sources and roles; then enter the demo. Back keeps your entries. **Skip to demo** and **Restart onboarding** are always in the header.
-- **Overview, Team, Board, Activity, Connections** for the synthetic *Reading room* project, with stable IDs (`lead`, `engineer`, `qa`; tasks `RR-101` to `RR-105`). Selecting a task opens a detail panel with owner, reviewer, review state, acceptance criteria, blockers and dependencies. Session activity for that task is listed separately and never changes board status.
-- **Board** shows a fixture with four declared columns (To Do, In Progress, In Review, Done). Nothing reads or writes Backlog.md.
-- **Activity** is a fixed recording of sample events, not monitoring. Subagent events are hidden by default behind a toggle. Configured reporting lines are listed separately from recorded messages, session creation and spawn events. Idle is never shown as Done.
-- **Connections** states each source plainly: sample board, session observation unavailable, GitHub not connected, secret store not configured, and 1Password under consideration with no vault access or connect control. See the [credential design](https://github.com/saleemhamo/myteam-md/blob/main/docs/credentials-and-access.md).
+- **Studio:** proposed/recorded engineers, current outcome, what needs attention and next steps; inspect an engineer without launching it.
+- **Project:** reported business/system facts, sources, uncertainty and open questions.
+- **Work:** illustrative plans and delivery evidence in demo mode; a local workspace shows the missing board/agent connections honestly.
+- **Setup:** recorded setup reports, runtime preferences and unavailable integrations.
 
-Change and review references such as `C-14` and `R-5` are synthetic and link nowhere. Configured skills come from the fixture; observed skill use is shown as unavailable rather than zero.
+The [onboarding CLI](https://github.com/saleemhamo/myteam-md/blob/main/docs/onboarding-state.md) writes the private record. Refresh reads its latest revision. Reload resumes the same saved context; no form must be filled again. A copied prompt has not been sent: paste it into MyTeam.md. Its target project and workspace stay explicit.
 
-## Limits and boundaries
+A team profile is not a live session. Reported checks are not rerun by refreshing. Record update time and view fetch time are distinct; neither proves source freshness. Costs, estimated completion, PRs, live activity, grants and connected accounts remain unavailable unless a future supported adapter supplies evidence. The demo labels sample engineers/work and never represents them as live integration results.
 
-- State lives only in the page. Reloading resets everything. Entries are not stored, sent anywhere or passed to the CLI.
-- Finishing onboarding creates no files, workspace, sessions or agents and checks no tool installation.
-- The page asks for no credentials or private paths and makes no external network requests: the Content Security Policy sets `connect-src 'none'` and allows scripts, styles and images from the preview origin only.
-- The server answers only `GET` and `HEAD` for an explicit allowlist: `/` and `/index.html`, `/styles.css`, `/app.mjs`, `/state.mjs`, and the product-owned `/brand/tokens.css` and `/brand/wordmark.svg`. Every other path returns 404, other methods return 405, and requests whose `Host` is not the loopback address and port return 421. It never lists directories or serves other repository files.
-- Light theme and one density only. Screen-reader and visual-regression checks have not been recorded for this preview.
+## Local boundary
 
-Screen behavior and the planned integration are described in [UI and visual experience](https://github.com/saleemhamo/myteam-md/blob/main/docs/ui-and-visuals.md).
+The server binds to loopback and serves an explicit asset allowlist plus `GET`/`HEAD /api/workspace`. Other methods, arbitrary paths, cross-origin API requests and host-name mismatches are rejected. A workspace identity is pinned at startup; a corrupt or replaced workspace fails closed. The browser may retain only the same workspace's last valid snapshot, visibly stale; it never substitutes demo data for a failed local load.
 
-## Create a real workspace
+Only the private setup profile and onboarding record are read. Selected source directories, context documents, credentials and provider caches are not scanned. Keep secrets out of the plain-text reports; this is not a credential vault, sandbox or authenticated multiuser service. Nothing writes to Backlog.md, starts workers or dispatches native chat messages.
 
-Use the existing CLI from the repository root:
+## Validation contract
 
-```sh
-node bin/myteam.mjs init
-```
+Run `npm test` for the record, CLI, UI state and real HTTP server checks. Relevant cases include persistence, stale/concurrent writes, wrong workspace identity, malformed/oversized input, no browser mutation methods, no secret/source-file response, safe text rendering, unavailable/stale data, selection and prompt targeting. UI visual checks must cover desktop and narrow screens, keyboard focus, no page overflow and clear demo/local labels. Passing these tests does not establish screen-reader conformance, native plugin invocation, live connectors or autonomous delivery.
 
-It prompts for the team name, runtime and a new private directory. Follow [Try the terminal setup](setup.html) for details and the `doctor` check.
+Manual trial:
 
-## Tests
+1. Create a private demo workspace through the CLI, then start the server bound to it.
+2. Confirm the initial view reports a starter proposal and no running engineers.
+3. Read `onboard`, save one authorized fact/outcome update with its current revision, and refresh the browser.
+4. Confirm the new record survives reload and remains targeted to the same workspace.
+5. Try a stale CLI revision; the previous saved record must remain unchanged.
+6. Navigate all four views, inspect an engineer, copy a prompt and verify it has not been sent.
+7. Make only a disposable test record invalid; refresh must show unavailable or visibly stale state, never a sample substitution. Restore it afterward.
+8. Check keyboard use and 320px/mobile layout. The synthetic tour should remain clearly labeled separately.
 
-Run the UI tests from the repository root:
-
-```sh
-node --test test/ui-state.test.mjs test/ui-server.test.mjs
-```
-
-[`test/ui-state.test.mjs`](https://github.com/saleemhamo/myteam-md/blob/main/test/ui-state.test.mjs) covers onboarding validation, back navigation, runtime assignment, skip/reset, selection preservation and fixture rules. [`test/ui-server.test.mjs`](https://github.com/saleemhamo/myteam-md/blob/main/test/ui-server.test.mjs) starts the server on an ephemeral loopback port and checks the allowlist, methods, host check, headers and local-only asset references with real HTTP requests.
-
-## Manual UI verification
-
-With the server running, check in a desktop browser and at a 390px-wide viewport:
-
-1. Press **Next** with empty names: both fields show errors and focus moves to the first one. Whitespace-only names are also refused.
-2. Enter names containing `<b>markup</b>`: they appear literally as text in the review step, the navigation sidebar and the Overview heading.
-3. On step 2 choose **Mixed**: lead and engineer start on Codex and QA on Claude; change one role and confirm the review step reflects it. **Back** returns with entries intact.
-4. Enter the demo and visit every navigation item; the current view is indicated by more than color.
-5. Open a task from Board, then switch views and toggle subagent events in Activity: the same task stays selected. **Close** returns focus to the button that opened it.
-6. Confirm Connections offers no connect, install or secret-entry controls.
-7. Use the keyboard only: the skip link, visible focus outline and every control work. With reduced motion enabled nothing animates.
-8. In developer tools, confirm the network panel shows only the allowlisted local files and no console CSP violations.
-9. **Restart onboarding** returns to an empty step 1; reload does the same.
-
-## Recorded validation
-
-On 19 November 2026, the 19 focused Node tests passed on macOS. The local browser flow was checked at the default 1280px desktop width and at 390px and 320px widths. Required-field errors, preserved entries on Back, mixed per-role assignments, literal markup-like names, skip/reset/reload, all five views, task selection across navigation and subagent toggles, and keyboard task open/close focus were exercised. A mobile grid overflow found during that check was fixed; the onboarding stages and all five views had no page-level horizontal overflow at 320px. Browser console warnings/errors were empty in the checked flow.
-
-These checks do not establish screen-reader or WCAG conformance, automated visual-regression coverage, live workspace integration, or real connection/credential behavior. Screenshot evidence is retained privately with the implementation handoff.
+The [journey plan](https://github.com/saleemhamo/myteam-md/blob/main/docs/team-journeys.md) and [visual direction](visual-direction.html) own the product and design rationale. Complete workspace discovery, task integration and delivery evidence remain later work.

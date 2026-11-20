@@ -61,3 +61,7 @@ npm test
 ```
 
 Tests use Node's built-in runner and disposable synthetic directories. They check every runtime preset, piped wizard answers, mixed assignments, preview/cancellation/EOF, overwrite refusal, project preservation, invalid profile bindings, independent workspaces, and diagnostic failures. Test-created directories are removed. The local archive is separately installed into an isolated prefix and exercised through the installed binary before handoff; no registry publication or provider execution is part of that check.
+
+## Saved onboarding trial
+
+After the terminal checks, follow the [onboarding record trial](ui-preview.html#validation-contract) to save a source-linked report through the CLI, refresh the read-only UI, reload it, and reject a stale update. No credentials or real provider sessions are needed. This exercises local continuity, not native project provisioning or delivery execution.

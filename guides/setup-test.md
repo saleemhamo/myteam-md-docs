@@ -3,7 +3,7 @@ layout: guide
 title: "Your first setup test"
 description: "Try the preview and check its boundaries."
 nav_order: 2
-source_references: false
+source_references: true
 permalink: /guides/setup-test.html
 ---
 
@@ -31,7 +31,7 @@ Use the [setup guide](setup.html) to run from source or install the local archiv
 | In a new project-mode workspace, select a disposable project and context file | References are saved; original contents and repository instructions stay unchanged |
 | Delete that disposable context file, then run `doctor` | It reports a failed context reference and exits nonzero |
 
-There is no board window or agent dispatch after setup yet. That is the next product work, not a setup failure. Do not test credential brokering: it is not implemented and the wizard does not accept secrets.
+The companion UI can show saved onboarding or a synthetic tour; a live task board and agent dispatch are not connected yet. That is the next product work, not a setup failure. Do not test credential brokering: it is not implemented and the wizard does not accept secrets.
 
 ## Optional plugin export
 
@@ -44,7 +44,7 @@ node bin/myteam.mjs plugin --runtime codex --output .local/plugins/codex --dry-r
 
 Confirm previews create nothing. Repeat without `--dry-run`, decline the export, and confirm the destination remains absent. Export with `--yes`; inspect the native manifest/version and shared skill, then verify a second export to the same directory is refused without changes. No provider should start and no settings should change.
 
-Native lifecycle checks are separate and remain unverified: record host/plugin/CLI versions, explicitly authorize loading or installation, verify discovery and invocation from an unrelated project directory with spaces in paths, preview/cancel/create/check, then update and remove using the host. Keep the workspace outside plugin caches. Confirm removal retains the workspace, existing repository instructions, personal skills and independent CLI. Missing or mismatched CLI should yield an actionable setup step rather than an implicit download. A configured skill is not evidence of invocation or adherence.
+Native lifecycle checks are separate; see the scoped [validation record](https://github.com/saleemhamo/myteam-md/blob/main/docs/plugin-validation.md). For further host acceptance: record host/plugin/CLI versions, explicitly authorize loading or installation, verify discovery and invocation from an unrelated project directory with spaces in paths, preview/cancel/create/check, then update and remove using the host. Keep the workspace outside plugin caches. Confirm removal retains the workspace, existing repository instructions, personal skills and independent CLI. Missing or mismatched CLI should yield an actionable setup step rather than an implicit download. A configured skill is not evidence of invocation or adherence.
 
 ## Feedback to bring back
 
@@ -65,3 +65,9 @@ Tests use Node's built-in runner and disposable synthetic directories. They chec
 ## Saved onboarding trial
 
 After the terminal checks, follow the [onboarding record trial](ui-preview.html#validation-contract) to save a source-linked report through the CLI, refresh the read-only UI, reload it, and reject a stale update. No credentials or real provider sessions are needed. This exercises local continuity, not native project provisioning or delivery execution.
+
+## Project and chat continuity
+
+Use the [record-and-resume example](https://github.com/saleemhamo/myteam-md/blob/main/docs/host-integration.md#record-and-resume-a-chat) with a synthetic manual workspace. Read evidence, save a brief, record its coordinator and restart the CLI. Resume must return the same brief with `verification: user-supplied`. An unknown chat returns no brief; a different project is rejected. Retire the old reference and add a new one, then verify the old chat no longer resumes.
+
+Open the UI with the complete reference group. Confirm the recorded owner stays fixed while browsing another teammate, and that copying a prompt sends nothing. Retire the selected reference while the UI is open; refresh must show an unavailable/stale state, never sample success. Run the same route from an offline installed archive to verify the server and assets are included.

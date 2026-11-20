@@ -11,7 +11,7 @@ permalink: /guides/plugins.html
 
 MyTeam can export a native Claude Code or Codex setup-plugin folder from the source checkout or a locally built CLI archive. This remains a local packaging preview, not a public marketplace listing. Local native CLI lifecycle checks have passed on the versions recorded below; the full project-aware invocation flow is still pending. The human CLI remains usable without either provider.
 
-The primary intended user entry is MyTeam inside the host's Projects section. The [plugin-led onboarding and autonomy contract](https://github.com/saleemhamo/myteam-md/blob/main/docs/plugin-onboarding-and-autonomy.md) defines compatible-core setup, native project binding, shared context and the later autonomous delivery flow. Current export-only behavior does not yet satisfy that contract.
+The primary intended user entry is MyTeam inside the host's Projects section. The [plugin-led onboarding and autonomy contract](https://github.com/saleemhamo/myteam-md/blob/main/docs/plugin-onboarding-and-autonomy.md) defines compatible-core setup, native project binding, shared context and the later autonomous delivery flow. The [local discovery and explicit chat-resume slice](https://github.com/saleemhamo/myteam-md/blob/main/docs/host-integration.md) now supports selected-file evidence, saved references and a packaged UI through the shared skill. Automatic native binding and full delivery do not yet satisfy that contract.
 
 ## Export shared setup guidance
 

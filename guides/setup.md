@@ -15,9 +15,9 @@ The package is not published on npm. Use the source checkout or build the local 
 
 ## Continue in the main chat and browser
 
-After `init` and `doctor`, ask the main MyTeam.md chat to inspect the selected project within your existing source/provider permissions, record what it understands and propose the team. `myteam onboard --workspace DIR` resumes its private record; revision-checked updates preserve facts, questions, reported checks and proposed profiles. See [saved onboarding](https://github.com/saleemhamo/myteam-md/blob/main/docs/onboarding-state.md) for the contract. This does not automatically scan sources or launch workers.
+After `init` and `doctor`, ask the main MyTeam.md chat to inspect the selected project within your existing source/provider permissions, record what it understands and propose the team. `myteam onboard --workspace DIR` resumes its private record; revision-checked updates preserve facts, questions, reported checks and proposed profiles. See [saved onboarding](https://github.com/saleemhamo/myteam-md/blob/main/docs/onboarding-state.md) for the contract. The bounded `discover` command supplies selected-file evidence without running scripts; [chat resume](https://github.com/saleemhamo/myteam-md/blob/main/docs/host-integration.md) adds explicit project/chat references. Workers are not launched.
 
-From the source checkout, `node ui/server.mjs --workspace DIR` opens a read-only local view at the printed URL. You can inspect and copy a targeted prompt; direct changes stay in the chat. Without a workspace argument it is a synthetic tour. See [UI usage](ui-preview.html).
+`myteam ui --workspace DIR` opens the bundled read-only local view at the printed URL; from source, use `node bin/myteam.mjs ui --workspace DIR`. You can inspect and copy a targeted prompt; direct changes stay in the chat. For a synthetic tour from source, use `node ui/server.mjs` without a workspace argument. See [UI usage](ui-preview.html).
 
 ## Requirements
 

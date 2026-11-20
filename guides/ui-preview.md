@@ -21,7 +21,7 @@ node ui/server.mjs --workspace /path/to/private-workspace --port 4318
 
 Use a workspace created through [setup](setup.html). Open the printed `127.0.0.1` address. Without `--workspace`, the server shows a separate synthetic tour. The default port is 4317; choose another if it is already in use. `MYTEAM_UI_PORT` also sets the port. Ctrl+C stops the server.
 
-The npm CLI archive does not include the UI assets/server in this increment. No dependency installation, credentials or model calls are needed to observe the local view.
+The local CLI archive now includes the UI server and assets: run its `myteam ui --workspace DIR` command. See [project/chat entry](https://github.com/saleemhamo/myteam-md/blob/main/docs/host-integration.md#the-companion-ui) for recorded coordinator and engineer references. No dependency installation, credentials or model calls are needed to observe the local view.
 
 ## What the view means
 
@@ -38,7 +38,7 @@ A team profile is not a live session. Reported checks are not rerun by refreshin
 
 The server binds to loopback and serves an explicit asset allowlist plus `GET`/`HEAD /api/workspace`. Other methods, arbitrary paths, cross-origin API requests and host-name mismatches are rejected. A workspace identity is pinned at startup; a corrupt or replaced workspace fails closed. The browser may retain only the same workspace's last valid snapshot, visibly stale; it never substitutes demo data for a failed local load.
 
-Only the private setup profile and onboarding record are read. Selected source directories, context documents, credentials and provider caches are not scanned. Keep secrets out of the plain-text reports; this is not a credential vault, sandbox or authenticated multiuser service. Nothing writes to Backlog.md, starts workers or dispatches native chat messages.
+The server reads the private setup profile, onboarding record and optional exact chat-reference record. Selected source directories, context documents, credentials and provider caches are not scanned. Keep secrets out of the plain-text reports; this is not a credential vault, sandbox or authenticated multiuser service. Nothing writes to Backlog.md, starts workers or dispatches native chat messages.
 
 ## Validation contract
 

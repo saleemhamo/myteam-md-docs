@@ -32,6 +32,9 @@ Screen mapping and visual prototypes can begin alongside this phase. [Acceptance
 
 ## R1 Team visibility
 
+The [implemented local entry slice](https://github.com/saleemhamo/myteam-md/blob/main/docs/host-integration.md) covers bounded file discovery, explicit chat references, fresh-process resume and the bundled read-only UI. Native invocation, automatic binding and canonical task/activity adapters remain acceptance gates.
+
+
 **Planned.** See who owns the work and what the available evidence says.
 
 - Complete the FDE journey from discovered context and verified setup to a proposed team, authorized workspace/session bindings and a durable lead handoff.

@@ -27,6 +27,18 @@ Build and maintain an example web product. Deliver small, verified improvements 
 
 All roles can use the same runtime in separate sessions, or the team can mix runtimes. Runtime and model selection are separate choices.
 
+### Example engineer profile
+
+This illustrative profile belongs to the proposed [specialty model](https://github.com/saleemhamo/myteam-md/blob/main/docs/team-handbook.md#engineer-profiles-and-specialties); it is not accepted CLI configuration.
+
+- Identity: engineer
+- Role: engineer
+- Primary specialty: frontend
+- Secondary specialty: accessibility
+- Stack context: TypeScript and browser interfaces for this synthetic web product
+- Skills/tools: select applicable workflows and verify availability during onboarding
+- Runtime: the team's selected runtime; a replacement preserves identity and task ownership
+
 ## Context sources
 
 - Product overview: select during onboarding.
@@ -40,6 +52,7 @@ Keep exact local paths, connected account identifiers, and session bindings in t
 ## Working agreements
 
 - Assign one accountable engineer to each task.
+- Record required specialties and relevant stack context; select an owner and independent reviewer with appropriate coverage.
 - Record acceptance criteria and dependencies before implementation.
 - Keep task status separate from observed session activity.
 - Record reviews and verification against the inspected version.
@@ -48,7 +61,7 @@ Keep exact local paths, connected account identifiers, and session bindings in t
 
 ## Optional roles
 
-Add delivery coordination, backend, full-stack, AI and ML, applied research, security, or reliability specialists when the work needs them.
+Add delivery coordination, research or specialist coverage when the work needs it. Use the handbook's [specialty vocabulary and assignment rules](https://github.com/saleemhamo/myteam-md/blob/main/docs/team-handbook.md#engineer-profiles-and-specialties) to distinguish responsibilities from technical focus.
 
 ## Reporting
 

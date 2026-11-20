@@ -21,6 +21,7 @@ MyTeam.md starts with a private workspace and grows into a visible, accountable 
 
 **In progress.** Make the first setup experience easy to install, understand and verify.
 
+- Introduce one [MyTask.md FDE onboarding guide](https://github.com/saleemhamo/myteam-md/blob/main/docs/project-onboarding-contract.md#fde-setup-to-team-handoff) to help establish the local environment and explain setup blockers; team construction and handoff continue in R1.
 - Create a private workspace with a readable team definition and runtime preferences.
 - Validate it with `doctor`; package a tested archive and prepare a draft release.
 - Complete the owner's plugin-led setup trial from the native Projects section; verify actual invocation, compatible core setup, cancellation and repeat onboarding. Keep the terminal route tested as a support path.
@@ -31,8 +32,10 @@ Screen mapping and visual prototypes can begin alongside this phase. [Acceptance
 
 **Planned.** See who owns the work and what the available evidence says.
 
+- Complete the FDE journey from discovered context and verified setup to a proposed team, authorized workspace/session bindings and a durable lead handoff.
 - Onboard from the selected native project, read its approved context, and bind exact sessions to durable engineer identities across supported hosts.
 - Deliver the team roster, Backlog.md board, activity views and relationship graphs.
+- Define and display [engineer specialties and stack context](https://github.com/saleemhamo/myteam-md/blob/main/docs/team-handbook.md#engineer-profiles-and-specialties), with coverage gaps visible and role/runtime choices kept separate.
 - Show skills, owned PRs/MRs, review obligations, recorded planning and a manual on-call roster.
 
 The workspace must remain useful with one provider, several providers or manual bindings. [Acceptance gate](https://github.com/saleemhamo/myteam-md/blob/main/docs/readiness-and-rollout.md#r1-team-visibility-alpha).
@@ -43,6 +46,7 @@ The workspace must remain useful with one provider, several providers or manual 
 
 - Autonomously plan, assign, continue and hand off authorized tasks within the workspace's recorded action policy and budgets; escalate decisions and exceptions.
 - Require reproduction or evaluation, appropriate tests and independent review before delivery.
+- Match task specialty requirements to available engineers and qualified independent reviewers; record gaps, capacity and assignment rationale.
 - Explain missing evidence and blocked gates in the UI; dispatch bounded work within granted permissions.
 
 Reuse supported native project coordination and compare existing orchestration tools before building an equivalent engine. Prove one bounded autonomous delivery flow before broadening execution. [Acceptance gate](https://github.com/saleemhamo/myteam-md/blob/main/docs/readiness-and-rollout.md#r2-controlled-delivery-alpha).

@@ -89,6 +89,12 @@ Run the same command replacing `--dry-run` with `--yes` to create it. `--yes` sk
 
 For your own project, run `init`, choose `project`, and provide an existing project directory. You can optionally select a context file and an existing Backlog project directory. To select multiple context files, use repeated `--context` flags with `--project` and `--workspace`; preview with `--dry-run` first. Shell-quote paths containing spaces. The workspace must be new; the project and selected references must already exist. Symlinked project, context, and board paths are resolved to their targets, shown in the preview, and saved as those resolved paths. Changing an input symlink later does not change the saved selection. Missing targets and wrong file types are rejected.
 
+## Start with the FDE and internal UI
+
+Install the trusted core locally, export a native plugin with `--link-core` for personal use, and install it through the host's supported plugin flow. In a fresh chat invoke `myteam:myteam-setup` and ask MyTeam.md to help onboard your project. The FDE introduces itself, opens the internal UI, and asks for the folder if no product is selected. It maintains the brief through chat; the browser is observational.
+
+`myteam ui --welcome --port 0` opens the welcome server without a workspace. Port `0` chooses a free loopback port; use the actual URL printed by the CLI. The [desktop entry guide](https://github.com/saleemhamo/myteam-md/blob/main/docs/host-integration.md#codex-desktop-entry) explains the side panel, return behavior and host-specific limits. The [plugin guide](plugins.html) covers native installation and the private, machine-local core reference. Restarting the host may require the next MyTeam message to reopen a stopped server.
+
 ## Install the local package instead
 
 Build an archive from the source checkout:

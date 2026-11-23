@@ -9,7 +9,7 @@ permalink: /guides/plugins.html
 
 # Local setup plugins
 
-MyTeam can export a native Claude Code or Codex setup-plugin folder from the source checkout or a locally built CLI archive. This remains a local packaging preview, not a public marketplace listing. Local native CLI lifecycle checks have passed on the versions recorded below; the full project-aware invocation flow is still pending. The human CLI remains usable without either provider.
+MyTeam can export a native Claude Code or Codex setup-plugin folder from the source checkout or a locally built CLI archive. This remains a local packaging preview, not a public marketplace listing. Local native CLI lifecycle checks have passed on the versions recorded below; folder-led creation and fresh-chat role resume are validated in both native CLIs; desktop acceptance is recorded separately. The human CLI remains usable without either provider.
 
 The primary intended user entry is MyTeam inside the host's Projects section. The [plugin-led onboarding and autonomy contract](https://github.com/saleemhamo/myteam-md/blob/main/docs/plugin-onboarding-and-autonomy.md) defines compatible-core setup, native project binding, shared context and the later autonomous delivery flow. The [local discovery and explicit chat-resume slice](https://github.com/saleemhamo/myteam-md/blob/main/docs/host-integration.md) now supports selected-file evidence, saved references and a packaged UI through the shared skill. Automatic native binding and full delivery do not yet satisfy that contract.
 
@@ -24,6 +24,8 @@ node bin/myteam.mjs plugin --runtime codex --output .local/plugins/codex --dry-r
 node bin/myteam.mjs plugin --runtime codex --output .local/plugins/codex --yes
 ```
 
+For a personal installation on this machine, add `--link-core` to include `local-core.json` pointing to the exporting CLI. Use a durable installed core and keep this linked export private; it contains an absolute machine path. The setup skill checks its version before use. Omitting the flag preserves a portable export with no machine paths.
+
 Each destination must be new. Omit `--yes` and `--dry-run` to review the files and answer the final export question. Declining or reaching end-of-input creates nothing. Export never changes provider settings or downloads, installs, or starts a provider. Directories request POSIX `0700` and files `0600`; this is not encryption or process isolation.
 
 The generated folder contains only:
@@ -32,9 +34,12 @@ The generated folder contains only:
 my-plugin/
   .claude-plugin/plugin.json       # Claude format, or .codex-plugin/plugin.json
   skills/myteam-setup/SKILL.md
+  assets/logo.png                 # Codex branding only
 ```
 
-The manifest version comes from the CLI's `package.json`. Both formats copy the same original [setup skill](setup-skill.html) byte-for-byte. No CLI executable, hooks, agents, MCP servers, private workspace data or credentials are bundled. The export module is [plugins/export.mjs](https://github.com/saleemhamo/myteam-md/blob/main/plugins/export.mjs).
+The optional machine-local core reference is the only additional file in a linked export. The manifest version comes from the CLI's `package.json`. Both formats copy the same original [setup skill](setup-skill.html) byte-for-byte. No CLI executable, hooks, agents, MCP servers, private workspace data or credentials are bundled. The export module is [plugins/export.mjs](https://github.com/saleemhamo/myteam-md/blob/main/plugins/export.mjs).
+
+The Codex manifest uses the supported `interface.displayName`, `brandColor`, `composerIcon` and `logo` fields. Both icons reference a bundled copy of the existing [MyTeam logo](../assets/avatar.png); the internal UI uses that same asset in its header and favicon. No remote image request is needed. See [OpenAI plugin presentation fields](https://developers.openai.com/plugins/build/plugins#add-openai-specific-metadata). Claude exports retain their existing manifest/skill contract; the [Claude directory icon field](https://code.claude.com/docs/en/plugins-reference#directory-listing-fields) is listing metadata and does not establish a logo in the local Claude Code UI.
 
 Use a separately trusted MyTeam CLI/source checkout matching the plugin version. A missing CLI is an explicit setup step using the [setup guide](setup.html); installing a plugin does not authorize fetching a registry package. The package remains private and unpublished.
 
@@ -54,7 +59,7 @@ See [Claude plugin loading](https://code.claude.com/docs/en/plugins) and [Codex 
 
 Run setup through the same preview/create/doctor sequence as the human CLI. `manual`, `claude`, `codex`, and `mixed` describe team runtime preferences; an exported package's format does not restrict that choice or require a second provider. Creating three role records does not start three agents.
 
-For an existing workspace check, the skill runs only `doctor --workspace`. Keep durable private workspaces outside plugin folders and caches. Preserve native repository instructions and personal skills. `MYTEAM.md` remains explicit context rather than an automatically loaded instruction file. The CLI records absolute references; moving a project or demo workspace can break them.
+Normal onboarding introduces the FDE and opens the internal UI, including a welcome view before selecting a product folder. In Codex desktop the skill uses the native right-hand browser panel when available; see [desktop entry](https://github.com/saleemhamo/myteam-md/blob/main/docs/host-integration.md#codex-desktop-entry). For an existing workspace check, the skill runs only `doctor --workspace`. Keep durable private workspaces outside plugin folders and caches. Preserve native repository instructions and personal skills. `MYTEAM.md` remains explicit context rather than an automatically loaded instruction file. The CLI records absolute references; moving a project or demo workspace can break them.
 
 Updating a plugin means exporting the reviewed new version to a new folder and using the host's native update/loading flow. Export does not replace an installed bundle. Disabling or removing a plugin must preserve separately stored workspaces and the independent CLI. Native settings, caches and connected-service authorization have their own removal behavior; no MyTeam uninstall command deletes them.
 

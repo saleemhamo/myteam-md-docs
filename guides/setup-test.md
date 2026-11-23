@@ -74,7 +74,18 @@ Open the UI with the complete reference group. Confirm the recorded owner stays 
 
 ## Plugin-led project trial
 
-With a matching trusted core and loaded native plugin, ask: “Onboard this project at /path/to/synthetic-project.” Let the FDE create private storage, inspect selected evidence, save the partial brief and surface unanswered business/authority questions. You should not need to edit JSON, choose a workspace ID or copy a transcript. Follow [folder-led entry](https://github.com/saleemhamo/myteam-md/blob/main/docs/host-integration.md#folder-led-first-run-and-fresh-chat-resume) for commands and custom-storage recovery.
+With a matching trusted core and loaded native plugin, ask: “Onboard this project at /path/to/synthetic-project.” Ada should create private storage, inspect selected evidence, save what she learned and propose the team before asking for the remaining decisions. You should not need to edit JSON, choose a workspace ID or copy a transcript. Follow [folder-led entry](https://github.com/saleemhamo/myteam-md/blob/main/docs/host-integration.md#folder-led-first-run-and-fresh-chat-resume) for commands and custom-storage recovery.
+
+Check the actual experience, not just that a skill is installed:
+
+- Select or provide the folder once. Ada should discover the stack, setup, tests, standards and product clues without asking you to restate readable files. Unverified conclusions must be labeled.
+- Confirm the internal UI shows **Choose folder → Ada investigates → Review findings → Team ready**, learned context and the remaining readiness conditions. It should update after a saved checkpoint without a page reload.
+- Expect a small batch of genuinely missing decisions through the host's native question form when available, or one concise batch in chat otherwise. Existing answers must not be asked again. A timeout or preselected choice is not an answer.
+- Expand a finding, let a checkpoint refresh, and confirm the expanded detail and keyboard focus remain usable. Unchanged refreshes should not rebuild the page.
+- Resume with partial answers. Confirm saved findings and answers survive, only unresolved decisions remain, and the team stays a proposal until its working agreement is confirmed.
+- Verify that an unanswered blocking question, conflicting fact or pending/failed check keeps **Team ready** incomplete. Ready means onboarding is agreed; it must not claim workers are running or the product is deployable.
+
+Run the interactive question-form check separately in each host. Deterministic tests and a Codex trial do not prove Claude's interactive behavior, or the reverse.
 
 In a fresh chat, ask to resume the same project as coordinator, then as a saved teammate. Confirm the same workspace/revision, correct role and clearly labeled **Selected role** in the companion. It must not claim a verified native identity, assigned work or running team. Unknown member, wrong project and incompatible runtime should fail with recovery guidance. Sources and provider settings must remain unchanged. A custom `--store` or `--workspace` remains explicit; only the default location is rediscovered automatically.
 

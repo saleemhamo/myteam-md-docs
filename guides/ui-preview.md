@@ -25,12 +25,14 @@ The local CLI archive now includes the UI server and assets: run its `myteam ui 
 
 ## What the view means
 
-- **Studio:** proposed/recorded engineers, current outcome, what needs attention and next steps; inspect an engineer without launching it.
+- **Studio:** onboarding journey, sourced findings, open decisions and the conditions still needed for team readiness; inspect proposed engineers without launching them.
 - **Project:** reported business/system facts, sources, uncertainty and open questions.
 - **Work:** illustrative plans and delivery evidence in demo mode; a local workspace shows the missing board/agent connections honestly.
 - **Setup:** recorded setup reports, runtime preferences and unavailable integrations.
 
-The [onboarding CLI](https://github.com/saleemhamo/myteam-md/blob/main/docs/onboarding-state.md) writes the private record. Refresh reads its latest revision. Reload resumes the same saved context; no form must be filled again. A copied prompt has not been sent: paste it into MyTeam.md. Its target project and workspace stay explicit.
+The [onboarding CLI](https://github.com/saleemhamo/myteam-md/blob/main/docs/onboarding-state.md) writes the private record. A visible page checks for updates every five seconds; manual refresh is also available. Unchanged records preserve the current view, while changed checkpoints preserve expanded findings and keyboard focus where the control still exists. Reload resumes the same saved context; no form must be filled again. A copied prompt has not been sent: paste it into MyTeam.md. Its target project and workspace stay explicit.
+
+The four-step journey follows saved onboarding phases, not a timer or an estimated percentage. **Team ready** requires a saved outcome, proposed team, confirmed working agreement, no unanswered blocking questions, no conflicting facts, no pending/failed checks and a saved ready phase. Stale data cannot establish readiness. This is onboarding readiness, not evidence of running workers or a deployable product.
 
 A team profile is not a live session. Reported checks are not rerun by refreshing. Record update time and view fetch time are distinct; neither proves source freshness. Costs, estimated completion, PRs, live activity, grants and connected accounts remain unavailable unless a future supported adapter supplies evidence. The demo labels sample engineers/work and never represents them as live integration results.
 
